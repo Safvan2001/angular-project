@@ -9,13 +9,13 @@
         
             
         <br>
-            <input id="acid" name="account"  type="text" (change)="acnoChange($event)" class="form-control" [placeholder]="data" aria-label="Username" aria-describedby="basic-addon1">
+            <input id="acid" name="account"  type="text" #acno class="form-control" [placeholder]="data" aria-label="Username" aria-describedby="basic-addon1">
         
          <br>
-         <input id="pid" name="Password"  (change)="Pnumber($event)" type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+         <input id="pid" name="Password"  #psw type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
 <br>
            
-<a href="#" class="btn text-white" type="submit" (click)="login()" style="margin-left: 20%;background-color: #e7820e;font-weight: bold;">Login</a>
+<a href="#" class="btn text-white" type="submit" (click)="login(acno,psw)" style="margin-left: 20%;background-color: #e7820e;font-weight: bold;">Login</a>
 <br>
 <a href="">Register</a>
 </div>

@@ -20,21 +20,58 @@ pno=""
 
   }
 
-  login(){
-    alert('Arjyun is here')
-  }
-  acnoChange(event:any){
-    
-    
-     this.acno=event.target.value
-     console.log(this.acno);
-     
-}
-Pnumber(event:any){
-  this.pno=event.target.value
-  console.log(this.pno);
+//   login(){
+//     // alert('Arjyun is here')
+//    var acno=this.acno
+// var pno=this.pno
+// var userDeatails=this.userDeatails
+
+// if(acno in userDeatails){
+//   if(pno==userDeatails[acno]["password"]){
+//     alert("login success")
+//   }
+//   else{
+//     alert("incurrect passsword")
+//   }
+// }
+// else{
+//   alert("incurrrect username")
+// }
+login(a:any,b:any){
+ 
+  this.acno=a.value
+  this.pno=b.value
   
+ var acno=this.acno
+var pno=this.pno
+var userDeatails=this.userDeatails
+
+if(acno in userDeatails){
+if(pno==userDeatails[acno]["password"]){
+  alert("login success")
 }
+else{
+  alert("incurrect passsword")
+}
+}
+else{
+alert("incurrrect username")
+}
+
+
+  }
+//   acnoChange(event:any){
+    
+    
+//      this.acno=event.target.value
+//      console.log(this.acno);
+     
+// }
+// Pnumber(event:any){
+//   this.pno=event.target.value
+//   console.log(this.pno);
+  
+// }
 
 
 }
