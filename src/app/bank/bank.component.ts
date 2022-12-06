@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bank',
@@ -19,59 +20,62 @@ pno=""
     1003:{acno:1003,username:"mega",password:123,balance:0},
 
   }
+  constructor(private router:Router){ }
 
-//   login(){
-//     // alert('Arjyun is here')
-//    var acno=this.acno
-// var pno=this.pno
-// var userDeatails=this.userDeatails
-
-// if(acno in userDeatails){
-//   if(pno==userDeatails[acno]["password"]){
-//     alert("login success")
-//   }
-//   else{
-//     alert("incurrect passsword")
-//   }
-// }
-// else{
-//   alert("incurrrect username")
-// }
-login(a:any,b:any){
- 
-  this.acno=a.value
-  this.pno=b.value
-  
- var acno=this.acno
+  login(){
+    // alert('Arjyun is here')
+   var acno=this.acno
 var pno=this.pno
 var userDeatails=this.userDeatails
 
 if(acno in userDeatails){
-if(pno==userDeatails[acno]["password"]){
-  alert("login success")
-}
-else{
-  alert("incurrect passsword")
-}
-}
-else{
-alert("incurrrect username")
-}
-
-
+  if(pno==userDeatails[acno]["password"]){
+    alert("login success")
+    this.router.navigateByUrl('dashboard')
   }
-//   acnoChange(event:any){
-    
-    
-//      this.acno=event.target.value
-//      console.log(this.acno);
-     
+  else{
+    alert("incurrect passsword")
+  }
+}
+else{
+  alert("incurrrect username")
+}
+// login(a:any,b:any){
+ 
+//   this.acno=a.value
+//   this.pno=b.value
+  
+//  var acno=this.acno
+// var pno=this.pno
+// var userDeatails=this.userDeatails
+
+// if(acno in userDeatails){
+// if(pno==userDeatails[acno]["password"]){
+//   alert("login success")
 // }
-// Pnumber(event:any){
-//   this.pno=event.target.value
-//   console.log(this.pno);
+// else{
+//   alert("incurrect passsword")
+// }
+// }
+// else{
+// alert("incurrrect username")
+// }
+
+
+//   }
+// //   acnoChange(event:any){
+    
+    
+// //      this.acno=event.target.value
+// //      console.log(this.acno);
+     
+// // }
+// // Pnumber(event:any){
+// //   this.pno=event.target.value
+// //   console.log(this.pno);
   
 // }
 
 
+}
 }
