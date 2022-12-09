@@ -1,10 +1,4 @@
-
-<h1 class="text-white p-4">Welcome {{user}}</h1>
-
-<a routerLink="/transaction">view transaction history</a>
-
-<div class="text white container bg-black w-75">
-  <form action="" (ngSubmit)="deposit()">
+<form action="" (ngSubmit)="deposit()">
     <h4 style="text-align: center;color: red;">Dposit</h4> 
     
           <div class="mb-3">
@@ -20,36 +14,79 @@
             <input type="" name="amnt1" [(ngModel)]="amnt" class="form-control">
           </div>
           <button type="submit"  class="btn btn-primary">Signup</button>
-<br><br>
+
     
     </form>
-</div>
 
-<br><br><br>
+ 
 
-<div class="text-white container bg-black w-75 ">
 
-  <form action="" (ngSubmit)="withdraw()">
+<form action="" (ngSubmit)="withdraw()">
     <h4 style="text-align: center;color: red;">Withdraw</h4> 
     
         <div  class="mb-3 ">
 
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Account number</label>
-            <input type="" name="acnum1" [(ngModel)]="acno1" class="form-control">
+            <input type="" name="acnum1" [(ngModel)]="acno" class="form-control">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" name="psw2" [(ngModel)]="psw1" class="form-control" >
+            <input type="password" name="psw2" [(ngModel)]="psw" class="form-control" >
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Amount</label>
-            <input type="" name="amnt2" [(ngModel)]="amnt1" class="form-control">
+            <input type="" name="amnt2" [(ngModel)]="acno" class="form-control">
           </div>
-
           <button type="submit" class="btn btn-primary">Signup</button>
-          <br><br>
-        </div>
+        
     </form>
+
+  .....................  .....................  .....................  .....................  .....................  .....................
+
+
+
+
+  import { Component } from '@angular/core';
+import { DataService } from '../services/data.service';
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
+})
+export class DashboardComponent {
+ 
+
+  acno=""
+  psw=""
+  amnt=""
   
-  </div>
+  constructor(private ds:DataService){}
+
+
+
+
+
+deposit(){
+var acno=this.acno
+var psw=this.psw
+var amnt=this.amnt
+
+
+const result=this.ds.deposit(acno,psw,amnt)
+
+if(result){
+  alert(`${amnt} credited your ac and the balace is ${result}`)
+}else{
+  alert("incurrect password or Account number")
+}
+
+
+
+  }
+  withdraw(){
+    
+  }
+
+}

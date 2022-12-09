@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import {  Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-bank',
@@ -9,37 +10,46 @@ import { Router } from '@angular/router';
 export class BankComponent {
 
 
-aim="hi arjyun"
+aim="Welcome"
 data="Enter Account number"
 acno=""
 pno=""
-  userDeatails:any={
-    1000:{acno:1000,username:"anu",password:123,balance:0},
-    1001:{acno:1001,username:"amal",password:123,balance:0},
-    1002:{acno:1002,username:"arun",password:123,balance:0},
-    1003:{acno:1003,username:"mega",password:123,balance:0},
-
-  }
-  constructor(private router:Router){ }
+ 
+  constructor(private router:Router,private ds:DataService){ }
 
   login(){
     // alert('Arjyun is here')
    var acno=this.acno
-var pno=this.pno
-var userDeatails=this.userDeatails
+   var pno=this.pno
 
-if(acno in userDeatails){
-  if(pno==userDeatails[acno]["password"]){
+   const result=this.ds.login(acno,pno)
+   if(result){
     alert("login success")
-    this.router.navigateByUrl('dashboard')
+    this.router.navigateByUrl("dashboard")
+
+   }
+   else{
+    alert("incurrect username or password")
+   }
+
+
+
   }
-  else{
-    alert("incurrect passsword")
-  }
-}
-else{
-  alert("incurrrect username")
-}
+// var userDeatails=this.userDeatails
+
+// if(acno in userDeatails){
+//   if(pno==userDeatails[acno]["password"]){
+//     alert("login success")
+//     this.router.navigateByUrl('dashboard')
+//   }
+//   else{
+//     alert("incurrect passsword")
+//   }
+// }
+// else{
+//   alert("incurrrect username")
+// }
+//   }
 // login(a:any,b:any){
  
 //   this.acno=a.value
@@ -76,6 +86,4 @@ else{
   
 // }
 
-
-}
 }

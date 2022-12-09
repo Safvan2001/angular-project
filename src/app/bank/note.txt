@@ -8,7 +8,7 @@ html==view
 [one side data sharing methord]
   1.1:- component to view [ ts to html ]
      
-     1.1.1:- string interpollation  {{}}
+     1.1.1:- string interpollation  {{}} [component to view]
      1.1.2:- property binding  [property]="value"
 
  1.2:- view to component [ html to ts ]
@@ -53,4 +53,27 @@ Dependency injuction
        to store multiple time using iteams for componentes
 
 ng g s servicename (to create)
+
+
+
+Angular directives
+--------------------
+
+1.structural directives to handle structured datas in view of a component
+
+  :- ngFor    -(can directly apply in html to access elements from array)
+   
+  
+
+
+  Form validation in Angular
+-------------------------------
+
+
+we can create in forms in two way 
+
+1:-Template Driven Form
+
+2:-Model Driven Form
+
 
