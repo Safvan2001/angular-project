@@ -4,20 +4,20 @@
 <a routerLink="/transaction">view transaction history</a>
 
 <div class="text white container bg-black w-75">
-  <form action="" (ngSubmit)="deposit()">
+  <form action="" (ngSubmit)="deposit()" [formGroup]="depositForm">
     <h4 style="text-align: center;color: red;">Dposit</h4> 
     
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Account number</label>
-            <input type="" name="acnum1" [(ngModel)]="acno" class="form-control">
+            <input type="" name="acnum1" formControlName="acno" class="form-control">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" name="psw1" [(ngModel)]="psw" class="form-control" >
+            <input type="password" name="psw1" formControlName="psw" class="form-control" >
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Amount</label>
-            <input type="" name="amnt1" [(ngModel)]="amnt" class="form-control">
+            <input type="" name="amnt1" formControlName="amnt" class="form-control">
           </div>
           <button type="submit"  class="btn btn-primary">Signup</button>
 <br><br>
@@ -29,22 +29,22 @@
 
 <div class="text-white container bg-black w-75 ">
 
-  <form action="" (ngSubmit)="withdraw()">
+  <form action="" (ngSubmit)="withdraw()" [formGroup]="withdrawForm">
     <h4 style="text-align: center;color: red;">Withdraw</h4> 
     
         <div  class="mb-3 ">
 
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Account number</label>
-            <input type="" name="acnum1" [(ngModel)]="acno1" class="form-control">
+            <input type="" name="acnum1" formControlName="acno1" class="form-control">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" name="psw2" [(ngModel)]="psw1" class="form-control" >
+            <input type="password" name="psw2" formControlName="psw1" class="form-control" >
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Amount</label>
-            <input type="" name="amnt2" [(ngModel)]="amnt1" class="form-control">
+            <input type="" name="amnt2" formControlName="amnt1" class="form-control">
           </div>
 
           <button type="submit" class="btn btn-primary">Signup</button>

@@ -62,6 +62,8 @@ Angular directives
 1.structural directives to handle structured datas in view of a component
 
   :- ngFor    -(can directly apply in html to access elements from array)
+
+  :- ngIf     -(can directly apply in html to access elements from array)
    
   
 
@@ -75,5 +77,36 @@ we can create in forms in two way
 1:-Template Driven Form
 
 2:-Model Driven Form
+
+         -Reactive Form
+         ----------------
+         ReactiveFormModule -module used to create model forms
+
+         FormBuilder   -class of ReactiveFormModule
+
+            -group,array,control
+
+
+
+
+      Validate Model Form
+    .........................
+
+    Validator - a class in angular it includes methods for apply validation
+
+
+    -access errors in Validator rule
+
+      this.registerForm.get("uname")?.errors
+
+                                -valid [empty response]
+                                -invalid  [content]
+
+       
+
+
+
+
+
 
 

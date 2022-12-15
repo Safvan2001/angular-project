@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormsModule } from '@angular/forms';
 import {  Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -12,15 +13,16 @@ export class BankComponent {
 
 aim="Welcome"
 data="Enter Account number"
-acno=""
-pno=""
- 
-  constructor(private router:Router,private ds:DataService){ }
 
+ 
+  constructor(private router:Router,private ds:DataService,private fb:FormBuilder){ }
+  loginForm = this.fb.group({acno:["",[]],pno:[""]})
+    
   login(){
+    
     // alert('Arjyun is here')
-   var acno=this.acno
-   var pno=this.pno
+   var acno=this.loginForm.value.acno
+   var pno=this.loginForm.value.pno
 
    const result=this.ds.login(acno,pno)
    if(result){
